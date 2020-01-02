@@ -3,7 +3,7 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-LIBS += -lSDL2main -lSDL2
+LIBS += -F/Library/Frameworks/SDL2.framework -framework SDL2
 
 HEADERS += \
     lv_conf.h \
