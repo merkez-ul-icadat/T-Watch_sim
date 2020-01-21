@@ -100,9 +100,10 @@
 /*Eclipse: <SDL2/SDL.h>    Visual Studio: <SDL.h>*/
 #ifdef __WIN32__
     #define MONITOR_SDL_INCLUDE_PATH    <SDL2_win32/SDL.h>
-#endif
-#ifdef __linux__
+#elif __linux__
     #define MONITOR_SDL_INCLUDE_PATH    <SDL2/SDL.h>
+#else
+    #define MONITOR_SDL_INCLUDE_PATH    <SDL.h>
 #endif
 
 /*Different rendering might be used if running in a Virtual machine*/
