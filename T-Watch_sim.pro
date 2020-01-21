@@ -10,7 +10,7 @@ unix:{
     }
     else:{
     #linux/unix only
-        LIBS +=  SDL2
+        LIBS += -L/usr/local/lib -lSDL2
     }
 }
 
