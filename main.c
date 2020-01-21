@@ -11,7 +11,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #define SDL_MAIN_HANDLED        /*To fix SDL's "undefined reference to WinMain" issue*/
-#include <SDL2/SDL.h>
+#ifdef __WIN32__
+    #include <SDL2_win32/SDL.h>
+#endif
 #include "lvgl/lvgl.h"
 #include "lv_drivers/display/monitor.h"
 #include "lv_drivers/indev/mouse.h"

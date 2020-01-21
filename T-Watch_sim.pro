@@ -3,8 +3,24 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-LIBS += -F/Library/Frameworks/SDL2.framework -framework SDL2
+unix:{
+    macx:{
+    # macos only
+        LIBS += -F/Library/Frameworks/SDL2.framework -framework SDL2
+    }
+    else:{
+    #linux/unix only
+        LIBS +=  SDL2
+    }
+}
 
+win32: {
+    #windows only
+    LIBS += -L$$PWD/SDL2_win32/lib/ -lmingw32 -lSDL2main -lSDL2
+
+    INCLUDEPATH += $$PWD/SDL2_win32
+    DEPENDPATH += $$PWD/SDL2_win32
+}
 HEADERS += \
     lv_conf.h \
     lv_drivers/display/R61581.h \
