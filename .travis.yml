@@ -11,7 +11,9 @@ install:
   # Qt5
   - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev
   - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
-
+  #SDL2
+  - sudo apt-get install -qq libsdl2-dev
+  
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
   - "export DISPLAY=:99.0"
